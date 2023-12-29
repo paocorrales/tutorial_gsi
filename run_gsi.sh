@@ -1,12 +1,8 @@
-#PBS -q larga 
-#PBS -A NMMM0035 
-#PBS -N TEST-1-GSI 
+#PBS -N tutorial-gsi
 #PBS -m abe 
-#PBS -M paola.corrales@cima.fcen.uba.ar 
 #PBS -l walltime=03:00:00 
 #PBS -l nodes=1:ppn=24 
 #PBS -j oe 
-#PBS -o /home/paola.corrales/EXP/TEST//LOGS/ 
 
 BASEDIR=/home/paola.corrales/datosmunin3/tutorial_gsi		# Path to the tutorial folder
 GSIDIR=/home/paola.corrales/datosmunin3/comGSIv3.7_EnKFv1.3	# Path to where the GSI/EnKF code is compiled 

@@ -1,29 +1,22 @@
-#PBS -q larga 
-#PBS -A NMMM0035 
-#PBS -N TEST-1-ENKF 
+#PBS -N tutorial-enkf 
 #PBS -m abe 
-#PBS -M paola.corrales@cima.fcen.uba.ar 
 #PBS -l walltime=03:00:00 
 #PBS -l nodes=2:ppn=96 
 #PBS -j oe 
-#PBS -o /home/paola.corrales/EXP/TEST//LOGS/ 
-#PBS -v BASEDIR,NOMBRE,WRFUTILDIR
 
 BASEDIR=/home/paola.corrales/datosmunin3/tutorial_gsi           # Path to the tutorial folder
 GSIDIR=/home/paola.corrales/datosmunin3/comGSIv3.7_EnKFv1.3     # Path to where the GSI/EnKF code is compiled
-FECHA_INI='11:00:00 2018-11-22'                                 # Init time (analisis tieme - $ANALISIS)
-ANALISIS=3600                                                   # Assimmilation cycle in seconds
+FECHA_INI='11:00:00 2018-11-22'                                 # Init time (analisis time - $ANALISIS)
+ANALISIS=3600                                                   # Assimilation cycle in seconds
 OBSWIN=1                                                        # Assimilation window in hours
-N_MEMBERS=10                                                    # Ensamble size
+N_MEMBERS=10                                                    # Ensemble size
 E_WE=200                                                        # West-East grid points
 E_SN=240                                                        # South-North grid points
 E_BT=37                                                         # Vertical levels
 
 ENKFPROC=20
 export OMP_NUM_THREADS=1
-#export OMP_STACKSIZE=512M
 
-ulimit -s unlimited
 set -x
 
 ####################################################
